@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 9,
+  "projectStateVersion": 23,
   "summary": "Build an intelligent travel assistant that helps users plan trips with destination suggestions, day-wise itineraries, budget estimates, recommendations, checklists, reminders, emergency info, and weather tips in a simple, visual, friendly format (with emojis and sections).",
   "architectural_notes": [
     "Conversation flow should ask targeted follow-up questions (budget, duration, origin, style, group) before generating plans when needed.",
@@ -8,15 +8,21 @@
     "Prioritize a UI/UX redesign pass to improve visual polish (layout grid, spacing system, typography scale, component consistency) while keeping the travel-friendly theme and avoiding blue/purple as primary colors.",
     "Ensure app branding is consistently \"TripMuse\" across UI (titles, headers, metadata) and update logo asset accordingly.",
     "After Trip Planner intake submission, automatically generate and display the complete trip plan (destinations, itinerary, budget, etc.) instead of stopping at data entry.",
-    "Add a currency setting/default (INR) used consistently in budget estimation and formatting."
+    "Add a currency setting/default (INR) used consistently in budget estimation and formatting.",
+    "Background/backdrop art direction should not be only spiritual; blend travel + spiritual + historical + beaches themes while remaining subtle and preserving text readability.",
+    "Update visual theme direction: use a dark, vibrant palette (radiant/neat navy-blue) and avoid white backgrounds (overrides earlier 'avoid blue/purple as primary colors' guidance if still applicable).",
+    "Update visual theme direction: shift primary palette/accent to sky blue (replace sunset-orange guidance where conflicting)"
   ],
   "known_issues": [
     "Current UI/UX design quality is perceived as poor; needs a higher-quality, neater visual design.",
     "Trip plan generation is not producing/showing the full trip information after users enter trip details.",
     "Budget/costs are displayed in USD; needs INR (₹) support.",
-    "App branding still shows \"TravelAssist\" in places; logo/name should be TripMuse."
+    "App branding still shows \"TravelAssist\" in places; logo/name should be TripMuse.",
+    "User reports the new background change is not visible ('no changing'); verify background asset is applied correctly across the app.",
+    "Deployed app appears to show the previous version instead of the latest (possible caching/asset/versioning issue)."
   ],
   "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Subtle premium travel background with sky-blue mood, low-noise, readable behind content (bg-travel-spiritual-historical-beach-sky-blue.dim_1920x1080.png)",
   "existing_features": [
     {
       "id": "feature-create-a-multi-step-trip-planner-intake-flow-that-collects-smart-follow-up-answers-budget-range-number-of-days-starting-city-country-travel-style-luxury-budget-adventure-relaxing-group-type-solo-couple-family-friends-travel-season-month-and-interests",
@@ -169,6 +175,142 @@
         "REQ-19"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-generate-a-new-subtle-travel-spiritual-background-image-asset-suitable-for-use-as-an-app-wide-backdrop-soft-premium-low-noise-ensuring-it-works-with-the-existing-light-dark-theme-and-does-not-reduce-text-readability",
+      "title": "Generate a new subtle travel + spiritual background image asset suitable for use as an app-wide backdrop (soft, premium, low-noise), ensuring it works with the existing light/dark theme and does not reduce text readability.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-the-new-travel-spiritual-background-as-a-consistent-backdrop-across-the-app-shell-and-the-unauthenticated-login-screen-using-a-low-opacity-overlay-so-all-existing-content-remains-readable-and-the-current-layout-flows-are-unchanged",
+      "title": "Apply the new travel + spiritual background as a consistent backdrop across the app shell and the unauthenticated login screen, using a low-opacity overlay so all existing content remains readable and the current layout/flows are unchanged.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-existing-app-wide-background-image-so-the-visual-mood-combines-travel-spiritual-historical-beach-elements-still-subtle-premium-low-noise-and-readable-behind-content-in-both-light-and-dark-mode",
+      "title": "Update the existing app-wide background image so the visual mood combines travel + spiritual + historical + beach elements (still subtle, premium, low-noise, and readable behind content in both light and dark mode).",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-updated-background-is-visibly-applied-across-the-authenticated-appshell-and-the-unauthenticated-authgate-and-refine-the-backdrop-treatment-with-a-softer-overlay-gradient-and-an-optional-subtle-motion-effect-that-respects-reduced-motion-preferences",
+      "title": "Ensure the updated background is visibly applied across the authenticated AppShell and the unauthenticated AuthGate, and refine the backdrop treatment with a softer overlay gradient and an optional subtle motion effect that respects reduced-motion preferences.",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-app-wide-background-backdrop-art-direction-to-match-the-visual-style-of-the-provided-reference-link-and-shift-the-overall-palette-toward-sunset-orange-while-keeping-the-background-subtle-premium-low-noise-and-readable-behind-content-in-both-light-and-dark-mode",
+      "title": "Update the app-wide background/backdrop art direction to match the visual style of the provided reference link and shift the overall palette toward “sunset orange”, while keeping the background subtle, premium, low-noise, and readable behind content in both light and dark mode.",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-the-updated-sunset-orange-backdrop-across-the-authenticated-appshell-and-the-unauthenticated-authgate-by-updating-the-existing-app-backdrop-styling-so-the-image-layer-and-gradient-overlay-reflect-the-sunset-orange-mood-while-preserving-the-current-overlay-opacity-layering-z-index-and-reduced-motion-behavior",
+      "title": "Apply the updated sunset-orange backdrop across the authenticated AppShell and the unauthenticated AuthGate by updating the existing .app-backdrop styling so the image layer and gradient overlay reflect the sunset-orange mood while preserving the current overlay opacity, layering (z-index), and reduced-motion behavior.",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-global-color-tokens-so-the-app-uses-a-dark-vibrant-palette-centered-on-radiant-navy-blue-and-remove-white-near-white-surfaces-from-the-default-appearance-backgrounds-cards-popovers-muted-surfaces",
+      "title": "Update the global color tokens so the app uses a dark, vibrant palette centered on radiant navy blue, and remove white/near-white surfaces from the default appearance (backgrounds, cards, popovers, muted surfaces).",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-dark-mode-the-default-and-ensure-the-app-does-not-render-a-white-light-theme-on-first-load",
+      "title": "Make dark mode the default and ensure the app does not render a white/light theme on first load.",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-adjust-the-app-backdrop-overlay-styling-so-the-overall-mood-matches-the-dark-navy-vibrant-theme-while-keeping-the-existing-background-image-readable-behind-content",
+      "title": "Adjust the app backdrop overlay styling so the overall mood matches the dark navy vibrant theme (while keeping the existing background image readable behind content).",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-global-color-tokens-so-the-app-s-primary-visual-identity-uses-a-sunset-orange-palette-instead-of-navy-cyan-blue-while-keeping-the-overall-dark-vibrant-look-and-maintaining-readable-contrast-for-text-borders-focus-rings-and-interactive-states",
+      "title": "Update the global color tokens so the app’s primary visual identity uses a sunset-orange palette instead of navy/cyan-blue, while keeping the overall dark, vibrant look and maintaining readable contrast for text, borders, focus rings, and interactive states.",
+      "reqIds": [
+        "REQ-29"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-adjust-the-app-backdrop-overlay-styling-to-remove-navy-indigo-tinted-gradients-and-replace-them-with-sunset-orange-tinted-gradients-preserving-the-current-backdrop-image-layer-opacity-layering-z-index-behavior-and-reduced-motion-behavior",
+      "title": "Adjust the app backdrop overlay styling to remove navy/indigo-tinted gradients and replace them with sunset-orange-tinted gradients, preserving the current backdrop image layer, opacity layering, z-index behavior, and reduced-motion behavior.",
+      "reqIds": [
+        "REQ-30"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-premium-shadow-utilities-so-any-colored-glow-components-that-currently-reference-navy-cyan-hues-are-aligned-with-the-new-sunset-orange-palette",
+      "title": "Update the premium shadow utilities so any colored glow components that currently reference navy/cyan hues are aligned with the new sunset-orange palette.",
+      "reqIds": [
+        "REQ-31"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-app-s-global-color-palette-so-the-primary-brand-color-uses-light-orange-sunset-orange-instead-of-navy-cyan-blue-and-ensure-this-change-is-reflected-consistently-across-the-ui-buttons-links-focus-rings-gradients-and-premium-shadow-glows-while-keeping-the-overall-look-dark-and-readable",
+      "title": "Update the app’s global color palette so the primary brand color uses light orange / sunset orange (instead of navy/cyan-blue), and ensure this change is reflected consistently across the UI (buttons, links, focus rings, gradients, and premium shadow glows) while keeping the overall look dark and readable.",
+      "reqIds": [
+        "REQ-32"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-global-theme-color-tokens-to-a-sky-blue-primary-palette-replacing-the-current-sunset-orange-palette-while-keeping-the-overall-dark-vibrant-readable-look-across-the-app-buttons-links-focus-rings-gradients-icons-and-interactive-states",
+      "title": "Update the global theme color tokens to a sky-blue primary palette (replacing the current sunset-orange palette) while keeping the overall dark, vibrant, readable look across the app (buttons, links, focus rings, gradients, icons, and interactive states).",
+      "reqIds": [
+        "REQ-33"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-premium-shadow-glow-styling-to-match-the-new-sky-blue-palette-including-the-reusable-premium-shadow-utilities-and-any-tailwind-theme-shadow-tokens-that-currently-embed-sunset-orange-glow-values",
+      "title": "Update premium shadow/glow styling to match the new sky-blue palette, including the reusable premium shadow utilities and any Tailwind theme shadow tokens that currently embed sunset-orange glow values.",
+      "reqIds": [
+        "REQ-34"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-app-wide-backdrop-treatment-to-match-the-sky-blue-theme-by-replacing-the-current-sunset-orange-tinted-overlay-gradients-used-by-the-app-backdrop-styling-while-preserving-layering-z-index-opacity-behavior-and-reduced-motion-behavior-for-the-subtle-drift-animation",
+      "title": "Update the app-wide backdrop treatment to match the sky-blue theme by replacing the current sunset-orange tinted overlay gradients used by the .app-backdrop styling, while preserving layering (z-index), opacity behavior, and reduced-motion behavior for the subtle drift animation.",
+      "reqIds": [
+        "REQ-35"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-generated-background-image-asset-with-a-sky-blue-art-direction-and-update-the-app-to-use-it-as-the-app-backdrop-background-image-url",
+      "title": "Add a new generated background image asset with a sky-blue art direction and update the app to use it as the app-backdrop background image URL.",
+      "reqIds": [
+        "REQ-36"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -247,6 +389,36 @@
     {
       "id": "AR-13",
       "summary": "In-app map view for a destination (e.g., Goa) showing must-visit places/POIs and helping users navigate/reach them",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Update app background/visual theme to a travel + spiritual themed background (travel/spiritual vibe in UI backdrop)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Expand the app-wide background theme beyond travel+spiritual to also include historical and beach vibes (still subtle, premium, readable in light/dark)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Update the app-wide background/backdrop to match the provided reference style with a sunset orange color palette (still subtle, premium, readable)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Redesign UI color palette to dark, vibrant theme (radiant/navy-blue), avoiding white backgrounds",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Change the app UI theme color palette to a sky blue look (replace current sunset-orange styling where applicable)",
       "reqIds": [],
       "status": "pending"
     }

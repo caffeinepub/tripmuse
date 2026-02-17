@@ -2,12 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-add-a-new-maps-navigation-section-to-the-trip-plan-overview-that-helps-users-reach-must-visit-places-for-the-trip-destination-e-g-goa-by-providing-external-map-links-for-each-place",
-      "featureTitle": "Add a new “🗺️ Maps & Navigation” section to the Trip Plan overview that helps users reach must-visit places for the trip destination (e.g., Goa) by providing external map links for each place.",
+      "featureId": "feature-update-the-global-theme-color-tokens-to-a-sky-blue-primary-palette-replacing-the-current-sunset-orange-palette-while-keeping-the-overall-dark-vibrant-readable-look-across-the-app-buttons-links-focus-rings-gradients-icons-and-interactive-states",
+      "featureTitle": "Update the global theme color tokens to a sky-blue primary palette (replacing the current sunset-orange palette) while keeping the overall dark, vibrant, readable look across the app (buttons, links, focus rings, gradients, icons, and interactive states).",
       "files": [
-        "frontend/src/features/trips/MapsNavigationSection.tsx",
-        "frontend/src/features/trips/TripPlanView.tsx",
-        "frontend/src/utils/maps.ts"
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
       ],
       "components": [
         "authorization@4.0.0",
@@ -18,15 +17,16 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-18"
+        "REQ-33"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-add-a-view-destination-in-maps-action-near-the-trip-destination-header-that-opens-an-external-map-search-centered-on-the-trip-destination-e-g-goa",
-      "featureTitle": "Add a “View destination in Maps” action near the trip destination header that opens an external map search centered on the trip destination (e.g., Goa).",
+      "featureId": "feature-update-premium-shadow-glow-styling-to-match-the-new-sky-blue-palette-including-the-reusable-premium-shadow-utilities-and-any-tailwind-theme-shadow-tokens-that-currently-embed-sunset-orange-glow-values",
+      "featureTitle": "Update premium shadow/glow styling to match the new sky-blue palette, including the reusable premium shadow utilities and any Tailwind theme shadow tokens that currently embed sunset-orange glow values.",
       "files": [
-        "frontend/src/features/trips/TripPlanView.tsx"
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
       ],
       "components": [
         "authorization@4.0.0",
@@ -37,7 +37,45 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-19"
+        "REQ-34"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-app-wide-backdrop-treatment-to-match-the-sky-blue-theme-by-replacing-the-current-sunset-orange-tinted-overlay-gradients-used-by-the-app-backdrop-styling-while-preserving-layering-z-index-opacity-behavior-and-reduced-motion-behavior-for-the-subtle-drift-animation",
+      "featureTitle": "Update the app-wide backdrop treatment to match the sky-blue theme by replacing the current sunset-orange tinted overlay gradients used by the .app-backdrop styling, while preserving layering (z-index), opacity behavior, and reduced-motion behavior for the subtle drift animation.",
+      "files": [
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-35"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-new-generated-background-image-asset-with-a-sky-blue-art-direction-and-update-the-app-to-use-it-as-the-app-backdrop-background-image-url",
+      "featureTitle": "Add a new generated background image asset with a sky-blue art direction and update the app to use it as the app-backdrop background image URL.",
+      "files": [
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-36"
       ],
       "confidence": "high"
     }

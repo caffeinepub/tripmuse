@@ -1,39 +1,63 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-17T09:43:53.895Z",
+  "generatedAt": "2026-02-17T15:06:08.258Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 2,
-    "implemented": 2,
+    "total": 4,
+    "implemented": 4,
     "items": [
       {
-        "id": "REQ-18",
-        "summary": "Add a new “🗺️ Maps & Navigation” section to the Trip Plan overview that helps users reach must-visit places for the trip destination (e.g., Goa) by providing external map links for each place.",
+        "id": "REQ-33",
+        "summary": "Update the global theme color tokens to a sky-blue primary palette (replacing the current sunset-orange palette) while keeping the overall dark, vibrant, readable look across the app (buttons, links, focus rings, gradients, icons, and interactive states).",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/utils/maps.ts",
-          "frontend/src/features/trips/MapsNavigationSection.tsx",
-          "frontend/src/features/trips/TripPlanView.tsx"
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
         ],
         "matchedFiles": [
-          "frontend/src/utils/maps.ts",
-          "frontend/src/features/trips/MapsNavigationSection.tsx",
-          "frontend/src/features/trips/TripPlanView.tsx"
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
         ]
       },
       {
-        "id": "REQ-19",
-        "summary": "Add a “View destination in Maps” action near the trip destination header that opens an external map search centered on the trip destination (e.g., Goa).",
+        "id": "REQ-34",
+        "summary": "Update premium shadow/glow styling to match the new sky-blue palette, including the reusable premium shadow utilities and any Tailwind theme shadow tokens that currently embed sunset-orange glow values.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/features/trips/TripPlanView.tsx"
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
         ],
         "matchedFiles": [
-          "frontend/src/features/trips/TripPlanView.tsx"
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ]
+      },
+      {
+        "id": "REQ-35",
+        "summary": "Update the app-wide backdrop treatment to match the sky-blue theme by replacing the current sunset-orange tinted overlay gradients used by the .app-backdrop styling, while preserving layering (z-index), opacity behavior, and reduced-motion behavior for the subtle drift animation.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css"
+        ]
+      },
+      {
+        "id": "REQ-36",
+        "summary": "Add a new generated background image asset with a sky-blue art direction and update the app to use it as the app-backdrop background image URL.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/bg-travel-spiritual-historical-beach-sky-blue.dim_1920x1080.png",
+          "frontend/src/index.css"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/bg-travel-spiritual-historical-beach-sky-blue.dim_1920x1080.png",
+          "frontend/src/index.css"
         ]
       }
     ]
@@ -43,9 +67,9 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/features/trips/MapsNavigationSection.tsx",
-    "frontend/src/features/trips/TripPlanView.tsx",
-    "frontend/src/utils/maps.ts",
+    "frontend/public/assets/generated/bg-travel-spiritual-historical-beach-sky-blue.dim_1920x1080.png",
+    "frontend/src/index.css",
+    "frontend/tailwind.config.js",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

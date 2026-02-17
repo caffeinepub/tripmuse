@@ -16,14 +16,13 @@ export default function AuthGate({ children }: AuthGateProps) {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-accent/5 p-4">
-        <div className="absolute inset-0 bg-[url('/assets/generated/hero-sunrise.dim_1600x600.png')] bg-cover bg-center opacity-[0.03]" />
+      <div className="min-h-screen flex items-center justify-center p-4 app-backdrop">
         
-        <Card className="w-full max-w-lg relative shadow-premium-lg border-border/50">
+        <Card className="w-full max-w-lg relative shadow-premium-lg border-border/70 bg-card/98 backdrop-blur-md">
           <CardHeader className="text-center space-y-6 pb-8">
             <div className="flex justify-center">
               <div className="relative">
-                <div className="absolute inset-0 bg-primary/10 blur-2xl rounded-full" />
+                <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
                 <img 
                   src="/assets/generated/logo-compass-path.dim_512x512.png" 
                   alt="TripMuse" 
@@ -31,67 +30,72 @@ export default function AuthGate({ children }: AuthGateProps) {
                 />
               </div>
             </div>
+            
             <div className="space-y-3">
-              <CardTitle className="text-3xl md:text-4xl font-semibold">
+              <CardTitle className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-primary via-accent to-primary bg-clip-text text-transparent">
                 Welcome to TripMuse
               </CardTitle>
-              <CardDescription className="text-base md:text-lg leading-relaxed">
-                Your intelligent travel companion for seamless trip planning
+              <CardDescription className="text-base text-muted-foreground">
+                Your intelligent travel companion for unforgettable journeys
               </CardDescription>
             </div>
           </CardHeader>
-          
+
           <CardContent className="space-y-8">
             <div className="grid gap-4">
-              <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/50 border border-border/50">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+              <div className="flex items-start gap-3 p-3 rounded-lg bg-muted/40 border border-border/40">
+                <div className="mt-0.5 p-2 rounded-md bg-primary/10">
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
-                <div className="space-y-1">
-                  <p className="font-medium text-foreground">Smart Destinations</p>
-                  <p className="text-sm text-muted-foreground">Personalized suggestions based on your preferences</p>
+                <div className="flex-1 space-y-1">
+                  <h4 className="font-medium text-sm text-foreground">Smart Itineraries</h4>
+                  <p className="text-xs text-muted-foreground">AI-powered trip planning tailored to your preferences</p>
                 </div>
               </div>
-              
-              <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/50 border border-border/50">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Calendar className="w-5 h-5 text-primary" />
+
+              <div className="flex items-start gap-3 p-3 rounded-lg bg-muted/40 border border-border/40">
+                <div className="mt-0.5 p-2 rounded-md bg-accent/10">
+                  <Calendar className="w-5 h-5 text-accent" />
                 </div>
-                <div className="space-y-1">
-                  <p className="font-medium text-foreground">Detailed Itineraries</p>
-                  <p className="text-sm text-muted-foreground">Day-by-day plans tailored to your travel style</p>
+                <div className="flex-1 space-y-1">
+                  <h4 className="font-medium text-sm text-foreground">Day-by-Day Plans</h4>
+                  <p className="text-xs text-muted-foreground">Detailed schedules with activities and recommendations</p>
                 </div>
               </div>
-              
-              <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/50 border border-border/50">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+
+              <div className="flex items-start gap-3 p-3 rounded-lg bg-muted/40 border border-border/40">
+                <div className="mt-0.5 p-2 rounded-md bg-primary/10">
                   <DollarSign className="w-5 h-5 text-primary" />
                 </div>
-                <div className="space-y-1">
-                  <p className="font-medium text-foreground">Budget Planning</p>
-                  <p className="text-sm text-muted-foreground">Track expenses and optimize your spending</p>
+                <div className="flex-1 space-y-1">
+                  <h4 className="font-medium text-sm text-foreground">Budget Tracking</h4>
+                  <p className="text-xs text-muted-foreground">Keep your expenses organized with INR estimates</p>
                 </div>
               </div>
-              
-              <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/50 border border-border/50">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <CheckCircle2 className="w-5 h-5 text-primary" />
+
+              <div className="flex items-start gap-3 p-3 rounded-lg bg-muted/40 border border-border/40">
+                <div className="mt-0.5 p-2 rounded-md bg-accent/10">
+                  <CheckCircle2 className="w-5 h-5 text-accent" />
                 </div>
-                <div className="space-y-1">
-                  <p className="font-medium text-foreground">Travel Checklists</p>
-                  <p className="text-sm text-muted-foreground">Never forget important tasks and reminders</p>
+                <div className="flex-1 space-y-1">
+                  <h4 className="font-medium text-sm text-foreground">Task Management</h4>
+                  <p className="text-xs text-muted-foreground">Never miss a booking or preparation step</p>
                 </div>
               </div>
             </div>
-            
+
             <Button
               onClick={login}
               disabled={isLoggingIn}
-              className="w-full h-12 text-base shadow-md hover:shadow-lg transition-all"
               size="lg"
+              className="w-full text-base font-semibold shadow-lg hover:shadow-xl transition-all"
             >
-              {isLoggingIn ? 'Connecting...' : 'Login to Start Planning'}
+              {isLoggingIn ? 'Connecting...' : 'Get Started'}
             </Button>
+
+            <p className="text-xs text-center text-muted-foreground">
+              Secure authentication powered by Internet Identity
+            </p>
           </CardContent>
         </Card>
       </div>

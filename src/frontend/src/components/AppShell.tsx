@@ -23,8 +23,8 @@ export default function AppShell({ children }: AppShellProps) {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
+    <div className="min-h-screen bg-background flex flex-col app-backdrop">
+      <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/90 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80">
         <div className="container flex h-16 items-center justify-between">
           <button
             onClick={() => navigate({ to: '/' })}
@@ -69,7 +69,7 @@ export default function AppShell({ children }: AppShellProps) {
         {children}
       </main>
 
-      <footer className="border-t border-border/40 bg-muted/30 mt-auto">
+      <footer className="border-t border-border/60 bg-card/40 backdrop-blur-sm mt-auto">
         <div className="container py-8">
           <div className="flex flex-col items-center justify-center gap-2 text-center">
             <p className="text-sm text-muted-foreground">

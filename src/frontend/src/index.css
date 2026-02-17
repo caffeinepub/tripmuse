@@ -4,87 +4,87 @@
 
 @layer base {
     :root {
-        /* Premium travel-inspired palette: Teal/Sage/Warm neutrals */
+        /* Dark vibrant sky blue palette - no white surfaces */
         --radius: 0.75rem;
         
-        /* Light mode - Soft, airy, sophisticated */
-        --background: 0.99 0.005 180;
-        --foreground: 0.20 0.015 220;
+        /* Deep cool base - rich and vibrant */
+        --background: 0.15 0.035 235;
+        --foreground: 0.95 0.015 235;
         
-        --card: 1 0 0;
-        --card-foreground: 0.20 0.015 220;
+        --card: 0.18 0.040 238;
+        --card-foreground: 0.95 0.015 235;
         
-        --popover: 1 0 0;
-        --popover-foreground: 0.20 0.015 220;
+        --popover: 0.17 0.038 235;
+        --popover-foreground: 0.95 0.015 235;
         
-        /* Primary: Sophisticated teal - travel/adventure without being blue */
-        --primary: 0.55 0.12 190;
-        --primary-foreground: 0.99 0.005 180;
+        /* Primary: Vibrant sky blue for energy */
+        --primary: 0.65 0.20 230;
+        --primary-foreground: 0.98 0.008 230;
         
-        /* Secondary: Warm sage */
-        --secondary: 0.94 0.015 140;
-        --secondary-foreground: 0.25 0.02 140;
+        /* Secondary: Cool cyan */
+        --secondary: 0.35 0.08 220;
+        --secondary-foreground: 0.95 0.015 235;
         
-        /* Muted: Soft neutral */
-        --muted: 0.96 0.008 180;
-        --muted-foreground: 0.50 0.012 200;
+        /* Muted: Slightly lighter cool tone */
+        --muted: 0.22 0.040 235;
+        --muted-foreground: 0.68 0.025 235;
         
-        /* Accent: Warm terracotta for highlights */
-        --accent: 0.70 0.14 35;
-        --accent-foreground: 0.99 0.005 180;
+        /* Accent: Vibrant azure for highlights */
+        --accent: 0.62 0.22 215;
+        --accent-foreground: 0.98 0.008 215;
         
-        --destructive: 0.55 0.20 25;
-        --destructive-foreground: 0.99 0.005 180;
+        --destructive: 0.55 0.24 15;
+        --destructive-foreground: 0.98 0.008 15;
         
-        --border: 0.92 0.008 180;
-        --input: 0.92 0.008 180;
-        --ring: 0.55 0.12 190;
+        --border: 0.28 0.045 238;
+        --input: 0.25 0.045 238;
+        --ring: 0.65 0.20 230;
         
-        --chart-1: 0.60 0.14 190;
-        --chart-2: 0.65 0.12 140;
-        --chart-3: 0.70 0.14 35;
-        --chart-4: 0.55 0.10 220;
-        --chart-5: 0.75 0.12 60;
+        --chart-1: 0.65 0.20 230;
+        --chart-2: 0.62 0.22 215;
+        --chart-3: 0.68 0.18 220;
+        --chart-4: 0.60 0.16 225;
+        --chart-5: 0.70 0.18 235;
     }
 
     .dark {
-        /* Dark mode - Deep, rich, premium */
-        --background: 0.18 0.015 220;
-        --foreground: 0.96 0.008 180;
+        /* Even deeper cool tones for explicit dark mode */
+        --background: 0.12 0.040 238;
+        --foreground: 0.96 0.012 235;
         
-        --card: 0.22 0.018 220;
-        --card-foreground: 0.96 0.008 180;
+        --card: 0.16 0.045 236;
+        --card-foreground: 0.96 0.012 235;
         
-        --popover: 0.20 0.018 220;
-        --popover-foreground: 0.96 0.008 180;
+        --popover: 0.14 0.042 238;
+        --popover-foreground: 0.96 0.012 235;
         
-        /* Primary: Brighter teal for dark mode */
-        --primary: 0.68 0.14 190;
-        --primary-foreground: 0.18 0.015 220;
+        /* Primary: Even more vibrant sky blue for dark */
+        --primary: 0.70 0.22 228;
+        --primary-foreground: 0.98 0.008 228;
         
-        /* Secondary: Muted sage */
-        --secondary: 0.28 0.020 140;
-        --secondary-foreground: 0.96 0.008 180;
+        /* Secondary: Deep cool cyan */
+        --secondary: 0.32 0.10 218;
+        --secondary-foreground: 0.96 0.012 235;
         
-        --muted: 0.26 0.018 220;
-        --muted-foreground: 0.62 0.012 200;
+        --muted: 0.20 0.045 235;
+        --muted-foreground: 0.65 0.028 235;
         
-        /* Accent: Warm highlight */
-        --accent: 0.65 0.16 35;
-        --accent-foreground: 0.96 0.008 180;
+        /* Accent: Bright azure */
+        --accent: 0.65 0.24 212;
+        --accent-foreground: 0.98 0.008 212;
         
-        --destructive: 0.52 0.22 20;
-        --destructive-foreground: 0.96 0.008 180;
+        --destructive: 0.58 0.26 12;
+        --destructive-foreground: 0.98 0.008 12;
         
-        --border: 0.30 0.018 220;
-        --input: 0.30 0.018 220;
-        --ring: 0.68 0.14 190;
+        --border: 0.25 0.048 238;
+        --input: 0.22 0.048 238;
+        --ring: 0.70 0.22 228;
         
-        --chart-1: 0.65 0.16 190;
-        --chart-2: 0.60 0.14 140;
-        --chart-3: 0.65 0.16 35;
-        --chart-4: 0.60 0.12 220;
-        --chart-5: 0.70 0.14 60;
+        --chart-1: 0.68 0.22 230;
+        --chart-2: 0.65 0.24 214;
+        --chart-3: 0.70 0.20 220;
+        --chart-4: 0.62 0.18 226;
+        --chart-5: 0.72 0.20 234;
     }
 
     * {
@@ -129,33 +129,106 @@
     }
 }
 
-/* Premium card shadows */
+/* Premium card shadows - enhanced for dark cool theme */
 @layer utilities {
     .shadow-premium {
         box-shadow: 
-            0 1px 2px 0 oklch(0 0 0 / 0.03),
-            0 2px 8px -2px oklch(0 0 0 / 0.05),
-            0 8px 24px -4px oklch(0 0 0 / 0.08);
+            0 1px 2px 0 oklch(0 0 0 / 0.4),
+            0 2px 8px -2px oklch(0 0 0 / 0.5),
+            0 8px 24px -4px oklch(0.65 0.20 230 / 0.15);
     }
     
     .shadow-premium-lg {
         box-shadow: 
-            0 2px 4px 0 oklch(0 0 0 / 0.04),
-            0 4px 16px -2px oklch(0 0 0 / 0.08),
-            0 16px 48px -8px oklch(0 0 0 / 0.12);
+            0 2px 4px 0 oklch(0 0 0 / 0.5),
+            0 4px 16px -2px oklch(0 0 0 / 0.6),
+            0 16px 48px -8px oklch(0.65 0.20 230 / 0.2);
     }
     
     .dark .shadow-premium {
         box-shadow: 
-            0 1px 2px 0 oklch(0 0 0 / 0.2),
-            0 2px 8px -2px oklch(0 0 0 / 0.3),
-            0 8px 24px -4px oklch(0 0 0 / 0.4);
+            0 1px 2px 0 oklch(0 0 0 / 0.6),
+            0 2px 8px -2px oklch(0 0 0 / 0.7),
+            0 8px 24px -4px oklch(0.70 0.22 228 / 0.2);
     }
     
     .dark .shadow-premium-lg {
         box-shadow: 
-            0 2px 4px 0 oklch(0 0 0 / 0.3),
-            0 4px 16px -2px oklch(0 0 0 / 0.4),
-            0 16px 48px -8px oklch(0 0 0 / 0.5);
+            0 2px 4px 0 oklch(0 0 0 / 0.7),
+            0 4px 16px -2px oklch(0 0 0 / 0.8),
+            0 16px 48px -8px oklch(0.70 0.22 228 / 0.25);
+    }
+    
+    /* Sky blue-toned Travel Background Backdrop */
+    .app-backdrop {
+        position: relative;
+    }
+    
+    /* Main background image layer */
+    .app-backdrop::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('/assets/generated/bg-travel-spiritual-historical-beach-sky-blue.dim_1920x1080.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        opacity: 0.06;
+        z-index: -2;
+        pointer-events: none;
+    }
+    
+    /* Sky blue/cyan gradient overlay for vibrant dark mood */
+    .app-backdrop::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            135deg,
+            oklch(0.20 0.10 230 / 0.6) 0%,
+            oklch(0.15 0.12 238 / 0.7) 30%,
+            oklch(0.12 0.10 225 / 0.8) 70%,
+            oklch(0.18 0.14 242 / 0.6) 100%
+        );
+        z-index: -1;
+        pointer-events: none;
+    }
+    
+    /* Subtle motion effect - respects prefers-reduced-motion */
+    @media (prefers-reduced-motion: no-preference) {
+        .app-backdrop::before {
+            animation: backdrop-drift 60s ease-in-out infinite alternate;
+        }
+    }
+    
+    @keyframes backdrop-drift {
+        0% {
+            transform: scale(1) translate(0, 0);
+        }
+        100% {
+            transform: scale(1.05) translate(-2%, -1%);
+        }
+    }
+    
+    /* Dark mode adjustments - even deeper */
+    .dark .app-backdrop::before {
+        opacity: 0.04;
+    }
+    
+    .dark .app-backdrop::after {
+        background: linear-gradient(
+            135deg,
+            oklch(0.15 0.12 235 / 0.7) 0%,
+            oklch(0.10 0.14 240 / 0.8) 30%,
+            oklch(0.08 0.12 228 / 0.85) 70%,
+            oklch(0.14 0.16 245 / 0.7) 100%
+        );
     }
 }

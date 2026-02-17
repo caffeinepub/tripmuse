@@ -1,16 +1,49 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-17T09:43:53.892Z",
-  "summary": "Diff adds external map-link utilities and UI actions to open Google Maps searches for the trip destination and each must-visit place, including a new “🗺️ Maps & Navigation” section and a “View destination in Maps” button in the TripPlanView hero/header. No embedded map/GPS functionality is evident.",
-  "missing_requirements": [],
-  "hallucinated_features": [],
-  "confidence": 0.86,
+  "generatedAt": "2026-02-17T15:06:08.254Z",
+  "summary": "Theme tokens and premium shadow/glow values were updated to a sky-blue palette (index.css + tailwind.config.js). However, there is no evidence of the requested app-backdrop overlay gradient updates or the addition/usage of a new sky-blue background image asset. Two modified metadata/summary files appear unrelated to the theming requirements.",
+  "missing_requirements": [
+    {
+      "id": "REQ-35",
+      "requirement": "Update the app-wide backdrop treatment to match the sky-blue theme by replacing the current sunset-orange tinted overlay gradients used by the .app-backdrop styling, while preserving layering (z-index), opacity behavior, and reduced-motion behavior for the subtle drift animation.",
+      "reason": "The diff shows color token and shadow updates, but no visible changes to any .app-backdrop CSS/gradient definitions, z-index/layering, or reduced-motion drift behavior.",
+      "evidence": [
+        "frontend/src/index.css (truncated)",
+        "frontend/tailwind.config.js (truncated)"
+      ]
+    },
+    {
+      "id": "REQ-36",
+      "requirement": "Add a new generated background image asset with a sky-blue art direction and update the app to use it as the app-backdrop background image URL.",
+      "reason": "No new files were added (Added: 0), and there is no evidence of a new image under frontend/public/assets/generated or any CSS update pointing .app-backdrop to a new image URL.",
+      "evidence": [
+        "File diff summary (Added: 0)",
+        "frontend/src/index.css (truncated)"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Modified project_state.json (project metadata/state).",
+      "reason": "Not requested by the BuildRequest (which is limited to a theme update); this file is unrelated to updating theme tokens/shadows/backdrop/image asset.",
+      "evidence": [
+        "project_state.json (truncated)"
+      ]
+    },
+    {
+      "description": "Modified frontend-file-summaries.txt (documentation/summary file).",
+      "reason": "Not requested by the BuildRequest; theming changes did not require updating a repository summary file.",
+      "evidence": [
+        "frontend-file-summaries.txt (truncated)"
+      ]
+    }
+  ],
+  "confidence": 0.74,
   "changed_files": [
     "frontend-file-summaries.txt",
-    "frontend/src/features/trips/MapsNavigationSection.tsx",
-    "frontend/src/features/trips/TripPlanView.tsx",
-    "frontend/src/utils/maps.ts",
+    "frontend/src/index.css",
+    "frontend/tailwind.config.js",
     "project_state.json"
   ]
 }

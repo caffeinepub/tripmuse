@@ -1,60 +1,94 @@
 {
   "kind": "build_request",
-  "title": "Add navigation-to-places links for Goa (and any destination)",
+  "title": "Switch app theme from sunset orange to sky blue",
   "projectName": "TripMuse",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-18",
-      "text": "Add a new “🗺️ Maps & Navigation” section to the Trip Plan overview that helps users reach must-visit places for the trip destination (e.g., Goa) by providing external map links for each place.",
+      "id": "REQ-33",
+      "text": "Update the global theme color tokens to a sky-blue primary palette (replacing the current sunset-orange palette) while keeping the overall dark, vibrant, readable look across the app (buttons, links, focus rings, gradients, icons, and interactive states).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-2"
         ],
         "quotes": [
-          "i need the maps that if i reached to goa some of the visiting places that should be reached"
+          "with sky blue change the theme"
         ]
       },
       "acceptanceCriteria": [
-        "On the Trip Plan page (TripPlanPage → Overview → TripPlanView), a clearly labeled section named “Maps & Navigation” is visible when the trip has one or more must-visit places.",
-        "The section lists each item from the existing Must-Visit Places list and includes an “Open in Maps” action per place.",
-        "Clicking “Open in Maps” opens a new browser tab to a maps website search for that place name combined with the trip destination (e.g., \"Basilica of Bom Jesus, Goa\"), using a URL-encoded query.",
-        "User-facing text in the new section is in English."
+        "Primary brand color throughout the UI appears sky blue (not sunset orange).",
+        "Text, borders, and focus rings maintain accessible contrast on dark surfaces.",
+        "No new UI features are introduced; only theming/visual styling changes."
       ]
     },
     {
-      "id": "REQ-19",
-      "text": "Add a “View destination in Maps” action near the trip destination header that opens an external map search centered on the trip destination (e.g., Goa).",
+      "id": "REQ-34",
+      "text": "Update premium shadow/glow styling to match the new sky-blue palette, including the reusable premium shadow utilities and any Tailwind theme shadow tokens that currently embed sunset-orange glow values.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-2"
         ],
         "quotes": [
-          "i need the maps that if i reached to goa some of the visiting places that should be reached"
+          "with sky blue change the theme"
         ]
       },
       "acceptanceCriteria": [
-        "TripPlanView shows a “View destination in Maps” action near the destination display in the hero/header area.",
-        "Clicking the action opens a new browser tab to a maps website search for the trip destination using a URL-encoded query.",
-        "The feature works for any destination string stored on the trip (not only Goa)."
+        "Cards and elevated surfaces show a subtle sky-blue glow instead of orange.",
+        "No regressions to general shadow depth/legibility on dark mode."
+      ]
+    },
+    {
+      "id": "REQ-35",
+      "text": "Update the app-wide backdrop treatment to match the sky-blue theme by replacing the current sunset-orange tinted overlay gradients used by the .app-backdrop styling, while preserving layering (z-index), opacity behavior, and reduced-motion behavior for the subtle drift animation.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "with sky blue change the theme"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backdrop overlay gradients have a sky-blue/cool-toned mood instead of orange/amber.",
+        "The background image layer and overlay remain subtle and do not reduce text readability.",
+        "Reduced-motion preference continues to disable the drift animation."
+      ]
+    },
+    {
+      "id": "REQ-36",
+      "text": "Add a new generated background image asset with a sky-blue art direction and update the app to use it as the app-backdrop background image URL.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "with sky blue change the theme"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A new sky-blue background image exists under frontend/public/assets/generated and is used by the .app-backdrop background-image.",
+        "The backdrop is visibly applied on both authenticated AppShell screens and the unauthenticated AuthGate screen."
       ]
     }
   ],
   "constraints": [
-    "Do not implement an embedded interactive map, geolocation, or GPS features; use external map links only.",
-    "Do not edit any files under frontend/src/components/ui or other immutable frontend paths listed in SYSTEM_CONTEXT.",
-    "Backend must remain a single Motoko actor; no new backend services/databases."
+    "Do not modify any files under frontend/src/components/ui (compose existing UI components instead).",
+    "Do not modify any files listed in frontend.immutablePaths (frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui).",
+    "Backend must remain single-actor; no backend changes are required for a theme update."
   ],
   "nonGoals": [
-    "Turn-by-turn navigation inside the app.",
-    "Live user location tracking.",
-    "Integrating third-party map SDKs (Google Maps JS SDK, Mapbox GL, etc.).",
-    "Automatically calculating routes, distances, or travel time within the app."
+    "Do not add new product features or change application flows (Trip Planner, Trips Dashboard, Trip Plan views).",
+    "Do not change backend data models, persistence, or APIs.",
+    "Do not introduce third-party theming libraries or non-standard framework changes."
   ],
   "imageRequirements": {
-    "required": [],
+    "required": [
+      "Subtle premium travel background with sky-blue mood, low-noise, readable behind content (bg-travel-spiritual-historical-beach-sky-blue.dim_1920x1080.png)"
+    ],
     "edits": []
   },
   "userProfileUpdate": {

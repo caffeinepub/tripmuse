@@ -77,7 +77,7 @@ function AppContent() {
 
 export default function App() {
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} forcedTheme="dark">
       <AppContent />
     </ThemeProvider>
   );

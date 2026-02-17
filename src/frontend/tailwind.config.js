@@ -72,8 +72,8 @@ export default {
             },
             boxShadow: {
                 xs: '0 1px 2px 0 oklch(0 0 0 / 0.04)',
-                premium: '0 1px 2px 0 oklch(0 0 0 / 0.03), 0 2px 8px -2px oklch(0 0 0 / 0.05), 0 8px 24px -4px oklch(0 0 0 / 0.08)',
-                'premium-lg': '0 2px 4px 0 oklch(0 0 0 / 0.04), 0 4px 16px -2px oklch(0 0 0 / 0.08), 0 16px 48px -8px oklch(0 0 0 / 0.12)',
+                premium: '0 1px 2px 0 oklch(0 0 0 / 0.4), 0 2px 8px -2px oklch(0 0 0 / 0.5), 0 8px 24px -4px oklch(0.65 0.20 230 / 0.15)',
+                'premium-lg': '0 2px 4px 0 oklch(0 0 0 / 0.5), 0 4px 16px -2px oklch(0 0 0 / 0.6), 0 16px 48px -8px oklch(0.65 0.20 230 / 0.2)',
             },
             fontFamily: {
                 sans: ['Inter var', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'sans-serif']

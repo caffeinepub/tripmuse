@@ -1,11 +1,12 @@
 # Specification
 
 ## Summary
-**Goal:** Add external maps links so users can quickly open their trip destination and must-visit places in a maps website (e.g., for Goa or any destination).
+**Goal:** Switch TripMuse’s visual theme from a sunset-orange primary palette to a sky-blue primary palette while preserving the current dark, vibrant, readable look.
 
 **Planned changes:**
-- Add a “Maps & Navigation” section to the Trip Plan overview that appears when the trip has one or more must-visit places.
-- In “Maps & Navigation”, list each existing must-visit place with an “Open in Maps” action that opens a new tab to a URL-encoded maps search for “[Place], [Destination]”.
-- Add a “View destination in Maps” action near the destination header that opens a new tab to a URL-encoded maps search for the destination string.
+- Update global theme color tokens so primary brand color (buttons, links, focus rings, icons, gradients, and interactive states) uses a sky-blue palette instead of sunset orange, maintaining accessible contrast on dark surfaces.
+- Update premium shadow/glow styling (including reusable shadow utilities and any Tailwind shadow tokens) to use subtle sky-blue glow values instead of orange, without changing overall depth/legibility.
+- Update the app-wide `.app-backdrop` overlay gradients to a cool/sky-blue treatment while preserving layering (z-index), opacity behavior, and reduced-motion behavior for drift animation.
+- Add a new sky-blue background image asset and update `.app-backdrop` to use it on both authenticated AppShell screens and the unauthenticated AuthGate screen.
 
-**User-visible outcome:** On a Trip Plan, users can open the destination in maps, and for each must-visit place they can click “Open in Maps” to search that place + destination in a new browser tab.
+**User-visible outcome:** The app’s branding and backdrop shift to a sky-blue theme across screens (including glows and gradients), with the same dark-mode readability and motion preferences respected.

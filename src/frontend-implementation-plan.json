@@ -1,48 +1,82 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Trip plan external maps links for destination and must-visit places",
+  "title": "TripMuse sky-blue theme refresh (replace sunset orange)",
   "requirements": [
     {
-      "id": "REQ-18",
-      "summary": "Add a “🗺️ Maps & Navigation” section to TripPlanView Overview that lists must-visit places with external map search links.",
+      "id": "REQ-33",
+      "summary": "Switch global color tokens to a sky-blue primary palette while preserving the app’s dark, vibrant, readable look across interactive states.",
       "acceptanceCriteria": [
-        "On the Trip Plan page (TripPlanPage → Overview → TripPlanView), a clearly labeled section named “Maps & Navigation” is visible when the trip has one or more must-visit places.",
-        "The section lists each item from the existing Must-Visit Places list and includes an “Open in Maps” action per place.",
-        "Clicking “Open in Maps” opens a new browser tab to a maps website search for that place name combined with the trip destination (e.g., \"Basilica of Bom Jesus, Goa\"), using a URL-encoded query.",
-        "User-facing text in the new section is in English."
+        "Primary brand color throughout the UI appears sky blue (not sunset orange).",
+        "Text, borders, and focus rings maintain accessible contrast on dark surfaces.",
+        "No new UI features are introduced; only theming/visual styling changes."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/utils/maps.ts",
-          "operation": "create",
-          "description": "Add small URL-building helpers to generate external map-search links using URL-encoded queries (e.g., destination-only and place+destination), ensuring the app uses external links only (no embedded maps/geolocation)."
-        },
-        {
-          "path": "frontend/src/features/trips/MapsNavigationSection.tsx",
-          "operation": "create",
-          "description": "Create a TripPlanView subcomponent that renders the “🗺️ Maps & Navigation” section when must-visit places exist, listing each place with an English “Open in Maps” action that opens a new tab to an external maps search URL built from place name + destination."
-        },
-        {
-          "path": "frontend/src/features/trips/TripPlanView.tsx",
+          "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Wire the new MapsNavigationSection into the Overview layout so it appears on TripPlanView when trip.mustVisitPlaces has items; use the shared maps URL helper to build URL-encoded external search links and ensure actions open in a new tab."
+          "description": "Replace the current sunset-orange OKLCH values for theme tokens (notably --primary and --ring, and any related token values like charts that represent the primary brand hue) with a sky-blue primary palette while keeping dark-mode readability and contrast for buttons, links, icons, gradients, and interactive states."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Review/adjust any Tailwind theme extensions that embed sunset-orange values (e.g., shadow/color-related tokens) so Tailwind utilities continue to reflect the updated sky-blue brand palette without changing app structure or flows."
         }
       ]
     },
     {
-      "id": "REQ-19",
-      "summary": "Add a “View destination in Maps” action near the TripPlanView destination header that opens an external map search for the destination.",
+      "id": "REQ-34",
+      "summary": "Update premium shadow/glow styling tokens and utilities to use subtle sky-blue glow values instead of sunset-orange.",
       "acceptanceCriteria": [
-        "TripPlanView shows a “View destination in Maps” action near the destination display in the hero/header area.",
-        "Clicking the action opens a new browser tab to a maps website search for the trip destination using a URL-encoded query.",
-        "The feature works for any destination string stored on the trip (not only Goa)."
+        "Cards and elevated surfaces show a subtle sky-blue glow instead of orange.",
+        "No regressions to general shadow depth/legibility on dark mode."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/features/trips/TripPlanView.tsx",
+          "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Add an English “View destination in Maps” action adjacent to the destination in the hero/header area; use the maps URL helper to create a URL-encoded destination search link and ensure it opens in a new browser tab (external links only; no embedded map)."
+          "description": "Update the reusable premium shadow utility classes (.shadow-premium, .shadow-premium-lg, and their .dark variants) to replace embedded orange glow OKLCH values with subtle sky-blue glow values while preserving shadow depth and legibility on dark surfaces."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Update Tailwind boxShadow tokens (premium, premium-lg) to remove sunset-orange glow values and replace them with matching sky-blue glow values, ensuring consistent elevated-surface styling across the app."
+        }
+      ]
+    },
+    {
+      "id": "REQ-35",
+      "summary": "Replace the app-wide .app-backdrop overlay gradients with cool-toned sky-blue treatments while preserving layering, opacity, and reduced-motion drift behavior.",
+      "acceptanceCriteria": [
+        "Backdrop overlay gradients have a sky-blue/cool-toned mood instead of orange/amber.",
+        "The background image layer and overlay remain subtle and do not reduce text readability.",
+        "Reduced-motion preference continues to disable the drift animation."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update .app-backdrop::after and .dark .app-backdrop::after linear-gradient color stops to sky-blue/cool-toned OKLCH values (replacing orange/amber), while keeping z-index layering, opacity behavior, and the existing prefers-reduced-motion-controlled drift animation unchanged."
+        }
+      ]
+    },
+    {
+      "id": "REQ-36",
+      "summary": "Add the new sky-blue generated backdrop image asset and update .app-backdrop to use it as the background image on both AuthGate and AppShell screens.",
+      "acceptanceCriteria": [
+        "A new sky-blue background image exists under frontend/public/assets/generated and is used by the .app-backdrop background-image.",
+        "The backdrop is visibly applied on both authenticated AppShell screens and the unauthenticated AuthGate screen."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/bg-travel-spiritual-historical-beach-sky-blue.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Add the generated asset file: frontend/public/assets/generated/bg-travel-spiritual-historical-beach-sky-blue.dim_1920x1080.png."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update .app-backdrop::before background-image to reference the new generated asset at frontend/public/assets/generated/bg-travel-spiritual-historical-beach-sky-blue.dim_1920x1080.png, keeping existing positioning, attachment, opacity, z-index, and reduced-motion drift behavior intact so it continues to apply on both AppShell and AuthGate (both already use the app-backdrop class)."
         }
       ]
     }
