@@ -1,0 +1,50 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Trip plan external maps links for destination and must-visit places",
+  "requirements": [
+    {
+      "id": "REQ-18",
+      "summary": "Add a “🗺️ Maps & Navigation” section to TripPlanView Overview that lists must-visit places with external map search links.",
+      "acceptanceCriteria": [
+        "On the Trip Plan page (TripPlanPage → Overview → TripPlanView), a clearly labeled section named “Maps & Navigation” is visible when the trip has one or more must-visit places.",
+        "The section lists each item from the existing Must-Visit Places list and includes an “Open in Maps” action per place.",
+        "Clicking “Open in Maps” opens a new browser tab to a maps website search for that place name combined with the trip destination (e.g., \"Basilica of Bom Jesus, Goa\"), using a URL-encoded query.",
+        "User-facing text in the new section is in English."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/utils/maps.ts",
+          "operation": "create",
+          "description": "Add small URL-building helpers to generate external map-search links using URL-encoded queries (e.g., destination-only and place+destination), ensuring the app uses external links only (no embedded maps/geolocation)."
+        },
+        {
+          "path": "frontend/src/features/trips/MapsNavigationSection.tsx",
+          "operation": "create",
+          "description": "Create a TripPlanView subcomponent that renders the “🗺️ Maps & Navigation” section when must-visit places exist, listing each place with an English “Open in Maps” action that opens a new tab to an external maps search URL built from place name + destination."
+        },
+        {
+          "path": "frontend/src/features/trips/TripPlanView.tsx",
+          "operation": "modify",
+          "description": "Wire the new MapsNavigationSection into the Overview layout so it appears on TripPlanView when trip.mustVisitPlaces has items; use the shared maps URL helper to build URL-encoded external search links and ensure actions open in a new tab."
+        }
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "summary": "Add a “View destination in Maps” action near the TripPlanView destination header that opens an external map search for the destination.",
+      "acceptanceCriteria": [
+        "TripPlanView shows a “View destination in Maps” action near the destination display in the hero/header area.",
+        "Clicking the action opens a new browser tab to a maps website search for the trip destination using a URL-encoded query.",
+        "The feature works for any destination string stored on the trip (not only Goa)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/trips/TripPlanView.tsx",
+          "operation": "modify",
+          "description": "Add an English “View destination in Maps” action adjacent to the destination in the hero/header area; use the maps URL helper to create a URL-encoded destination search link and ensure it opens in a new browser tab (external links only; no embedded map)."
+        }
+      ]
+    }
+  ]
+}

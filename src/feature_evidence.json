@@ -1,0 +1,45 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-a-new-maps-navigation-section-to-the-trip-plan-overview-that-helps-users-reach-must-visit-places-for-the-trip-destination-e-g-goa-by-providing-external-map-links-for-each-place",
+      "featureTitle": "Add a new “🗺️ Maps & Navigation” section to the Trip Plan overview that helps users reach must-visit places for the trip destination (e.g., Goa) by providing external map links for each place.",
+      "files": [
+        "frontend/src/features/trips/MapsNavigationSection.tsx",
+        "frontend/src/features/trips/TripPlanView.tsx",
+        "frontend/src/utils/maps.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-18"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-view-destination-in-maps-action-near-the-trip-destination-header-that-opens-an-external-map-search-centered-on-the-trip-destination-e-g-goa",
+      "featureTitle": "Add a “View destination in Maps” action near the trip destination header that opens an external map search centered on the trip destination (e.g., Goa).",
+      "files": [
+        "frontend/src/features/trips/TripPlanView.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-19"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

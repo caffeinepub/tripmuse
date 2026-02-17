@@ -1,0 +1,16 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-17T09:43:53.892Z",
+  "summary": "Diff adds external map-link utilities and UI actions to open Google Maps searches for the trip destination and each must-visit place, including a new “🗺️ Maps & Navigation” section and a “View destination in Maps” button in the TripPlanView hero/header. No embedded map/GPS functionality is evident.",
+  "missing_requirements": [],
+  "hallucinated_features": [],
+  "confidence": 0.86,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/features/trips/MapsNavigationSection.tsx",
+    "frontend/src/features/trips/TripPlanView.tsx",
+    "frontend/src/utils/maps.ts",
+    "project_state.json"
+  ]
+}

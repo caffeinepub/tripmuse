@@ -1,0 +1,258 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 9,
+  "summary": "Build an intelligent travel assistant that helps users plan trips with destination suggestions, day-wise itineraries, budget estimates, recommendations, checklists, reminders, emergency info, and weather tips in a simple, visual, friendly format (with emojis and sections).",
+  "architectural_notes": [
+    "Conversation flow should ask targeted follow-up questions (budget, duration, origin, style, group) before generating plans when needed.",
+    "Response formatting should be consistent: sectioned, clear, and include emojis; keep outputs simple and easy to scan.",
+    "Prioritize a UI/UX redesign pass to improve visual polish (layout grid, spacing system, typography scale, component consistency) while keeping the travel-friendly theme and avoiding blue/purple as primary colors.",
+    "Ensure app branding is consistently \"TripMuse\" across UI (titles, headers, metadata) and update logo asset accordingly.",
+    "After Trip Planner intake submission, automatically generate and display the complete trip plan (destinations, itinerary, budget, etc.) instead of stopping at data entry.",
+    "Add a currency setting/default (INR) used consistently in budget estimation and formatting."
+  ],
+  "known_issues": [
+    "Current UI/UX design quality is perceived as poor; needs a higher-quality, neater visual design.",
+    "Trip plan generation is not producing/showing the full trip information after users enter trip details.",
+    "Budget/costs are displayed in USD; needs INR (₹) support.",
+    "App branding still shows \"TravelAssist\" in places; logo/name should be TripMuse."
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-multi-step-trip-planner-intake-flow-that-collects-smart-follow-up-answers-budget-range-number-of-days-starting-city-country-travel-style-luxury-budget-adventure-relaxing-group-type-solo-couple-family-friends-travel-season-month-and-interests",
+      "title": "Create a multi-step Trip Planner intake flow that collects smart follow-up answers: budget range, number of days, starting city/country, travel style (luxury/budget/adventure/relaxing), group type (solo/couple/family/friends), travel season/month, and interests.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-trip-plan-generation-that-based-on-intake-answers-produces-destination-suggestions-a-detailed-day-wise-itinerary-recommended-hotels-areas-to-stay-local-food-suggestions-must-visit-places-weather-tips-best-travel-times-and-a-packing-checklist",
+      "title": "Implement trip plan generation that, based on intake answers, produces: destination suggestions, a detailed day-wise itinerary, recommended hotels/areas to stay, local food suggestions, must-visit places, weather tips/best travel times, and a packing checklist.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-travel-budget-estimation-that-breaks-down-costs-into-stay-food-transport-and-attractions-allow-users-to-adjust-assumptions-e-g-daily-food-budget-hotel-level-and-see-totals-update",
+      "title": "Add travel budget estimation that breaks down costs into stay, food, transport, and attractions; allow users to adjust assumptions (e.g., daily food budget, hotel level) and see totals update.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-to-do-travel-planner-that-lets-users-create-tasks-title-notes-due-date-linked-to-a-trip-mark-complete-and-filter-by-status-include-in-app-reminders-e-g-due-today-overdue-indicators-without-push-notifications",
+      "title": "Add a To-Do Travel Planner that lets users create tasks (title, notes, due date) linked to a trip, mark complete, and filter by status; include in-app reminders (e.g., “Due today/overdue” indicators) without push notifications.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-provide-an-emergency-info-section-per-trip-that-includes-nearest-hospitals-police-and-helplines-in-a-simple-format-allow-users-to-add-custom-emergency-contacts-and-store-them-with-the-trip",
+      "title": "Provide an Emergency Info section per trip that includes: nearest hospitals, police, and helplines in a simple format; allow users to add custom emergency contacts and store them with the trip.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-all-generated-travel-assistant-outputs-friendly-clear-and-organized-using-sections-and-emojis-in-user-facing-text-within-the-ui-e-g-headings-like-destinations-itinerary-budget-packing-to-dos-emergency-weather",
+      "title": "Make all generated travel assistant outputs “friendly, clear, and organized” using sections and emojis in user-facing text within the UI (e.g., headings like 🗺️ Destinations, 📅 Itinerary, 💸 Budget, 🧳 Packing, ✅ To‑Dos, 🚨 Emergency, 🌦️ Weather).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-persist-trip-plans-per-authenticated-user-using-internet-identity-users-can-create-multiple-trips-revisit-saved-trips-and-delete-trips-ensure-data-is-private-to-each-principal",
+      "title": "Persist trip plans per authenticated user using Internet Identity: users can create multiple trips, revisit saved trips, and delete trips; ensure data is private to each principal.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-trips-dashboard-page-that-shows-saved-trips-as-cards-with-key-summary-fields-destination-dates-length-group-type-style-budget-range-and-quick-actions-open-duplicate-delete",
+      "title": "Add a Trips Dashboard page that shows saved trips as cards with key summary fields (destination, dates/length, group type, style, budget range) and quick actions (open, duplicate, delete).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-coherent-visual-theme-for-the-app-and-enforce-it-consistently-colors-typography-layout-components-suitable-for-a-travel-planning-product-avoid-blue-purple-as-primary-colors",
+      "title": "Create a coherent visual theme for the app and enforce it consistently (colors, typography, layout, components) suitable for a travel-planning product; avoid blue/purple as primary colors.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-share-export-option-for-a-trip-plan-that-generates-a-clean-printable-view-and-browser-print-to-pdf-friendly-layout-containing-the-itinerary-budget-packing-list-to-dos-emergency-info-and-weather-tips",
+      "title": "Add a “Share / Export” option for a trip plan that generates a clean, printable view (and browser print-to-PDF friendly layout) containing the itinerary, budget, packing list, to-dos, emergency info, and weather tips.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-redesign-the-overall-visual-theme-to-a-high-quality-neat-modern-travel-product-style-and-enforce-it-consistently-across-the-app-typography-spacing-surfaces-borders-shadows-color-usage-and-focus-hover-states-without-introducing-new-product-features",
+      "title": "Redesign the overall visual theme to a high-quality, neat, modern travel-product style and enforce it consistently across the app (typography, spacing, surfaces, borders, shadows, color usage, and focus/hover states), without introducing new product features.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-improve-the-appshell-layout-header-main-container-footer-to-feel-more-premium-and-polished-refine-sizing-alignment-spacing-sticky-header-behavior-and-navigation-button-styling-while-preserving-existing-navigation-and-functionality",
+      "title": "Improve the AppShell layout (header, main container, footer) to feel more premium and polished: refine sizing, alignment, spacing, sticky header behavior, and navigation button styling while preserving existing navigation and functionality.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-redesign-the-authenticated-entry-and-core-flows-to-look-cleaner-and-more-modern-update-the-login-screen-authgate-trips-dashboard-hero-trip-cards-trip-planner-wizard-stepper-cards-inputs-and-trip-plan-view-sections-cards-for-improved-hierarchy-readability-and-visual-consistency",
+      "title": "Redesign the authenticated entry and core flows to look cleaner and more modern: update the Login screen (AuthGate), Trips dashboard hero + trip cards, Trip Planner wizard stepper/cards/inputs, and Trip Plan view sections/cards for improved hierarchy, readability, and visual consistency.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-refine-global-styling-tokens-and-tailwind-css-theme-variables-to-support-the-redesigned-ui-including-light-dark-palettes-border-radius-and-surface-contrasts-while-keeping-accessibility-in-mind-contrast-focus-rings",
+      "title": "Refine global styling tokens and Tailwind/CSS theme variables to support the redesigned UI (including light/dark palettes, border radius, and surface contrasts) while keeping accessibility in mind (contrast, focus rings).",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-trip-plan-generation-flow-so-that-after-the-user-completes-the-trip-planner-wizard-and-clicks-generate-trip-plan-the-created-trip-always-contains-and-displays-a-complete-proper-trip-plan-not-partial-empty-sections-including-destination-suggestions-a-detailed-day-wise-itinerary-recommended-hotels-areas-to-stay-local-food-suggestions-must-visit-places-weather-tips-best-travel-times-and-a-packing-checklist",
+      "title": "Fix the trip plan generation flow so that after the user completes the Trip Planner wizard and clicks “Generate Trip Plan”, the created trip always contains and displays a complete, “proper” trip plan (not partial/empty sections), including destination suggestions, a detailed day-wise itinerary, recommended hotels/areas to stay, local food suggestions, must-visit places, weather tips/best travel times, and a packing checklist.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-extend-the-persisted-tripplan-data-model-and-create-update-apis-so-the-backend-stores-the-additional-generated-trip-plan-fields-required-for-a-complete-trip-recommended-hotels-areas-to-stay-local-food-suggestions-and-must-visit-places-and-the-frontend-displays-them-in-the-trip-plan-view",
+      "title": "Extend the persisted TripPlan data model and create/update APIs so the backend stores the additional generated trip plan fields required for a complete trip (recommended hotels/areas to stay, local food suggestions, and must-visit places) and the frontend displays them in the Trip Plan view.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-switch-the-app-s-budget-currency-from-usd-to-indian-rupees-inr-across-the-trip-planner-wizard-trip-plan-generation-budget-estimator-budget-editing-ui-and-trip-plan-display",
+      "title": "Switch the app’s budget currency from USD ($) to Indian Rupees (INR, ₹) across the Trip Planner wizard, trip plan generation, budget estimator, budget editing UI, and trip plan display.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-maps-navigation-section-to-the-trip-plan-overview-that-helps-users-reach-must-visit-places-for-the-trip-destination-e-g-goa-by-providing-external-map-links-for-each-place",
+      "title": "Add a new “🗺️ Maps & Navigation” section to the Trip Plan overview that helps users reach must-visit places for the trip destination (e.g., Goa) by providing external map links for each place.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-view-destination-in-maps-action-near-the-trip-destination-header-that-opens-an-external-map-search-centered-on-the-trip-destination-e-g-goa",
+      "title": "Add a “View destination in Maps” action near the trip destination header that opens an external map search centered on the trip destination (e.g., Goa).",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Destination suggestions based on budget, time, interests, season, and group type",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Generate detailed day-wise itineraries for trips",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Provide travel budget estimates (stay, food, transport, attractions)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Recommend hotels, local food, and must-visit places",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Provide packing checklist",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "To-do travel planner with reminders",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Emergency handling info (nearest hospitals, police, helplines)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Weather tips and best travel times guidance",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Smart follow-up questions collection (budget, days, origin, travel style, group type)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Responses formatted as friendly, clear, organized sections with emojis and simple/visual presentation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Redesign the app UI/UX to a high-quality, neat, modern visual design (improve layout, typography, spacing, components, and overall polish)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Support Indian Rupees (INR) for trip budget estimates (₹ formatting and correct conversions)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "In-app map view for a destination (e.g., Goa) showing must-visit places/POIs and helping users navigate/reach them",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "TripMuse",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

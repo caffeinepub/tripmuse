@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Premium travel-inspired palette: Teal/Sage/Warm neutrals */
+        --radius: 0.75rem;
+        
+        /* Light mode - Soft, airy, sophisticated */
+        --background: 0.99 0.005 180;
+        --foreground: 0.20 0.015 220;
+        
+        --card: 1 0 0;
+        --card-foreground: 0.20 0.015 220;
+        
+        --popover: 1 0 0;
+        --popover-foreground: 0.20 0.015 220;
+        
+        /* Primary: Sophisticated teal - travel/adventure without being blue */
+        --primary: 0.55 0.12 190;
+        --primary-foreground: 0.99 0.005 180;
+        
+        /* Secondary: Warm sage */
+        --secondary: 0.94 0.015 140;
+        --secondary-foreground: 0.25 0.02 140;
+        
+        /* Muted: Soft neutral */
+        --muted: 0.96 0.008 180;
+        --muted-foreground: 0.50 0.012 200;
+        
+        /* Accent: Warm terracotta for highlights */
+        --accent: 0.70 0.14 35;
+        --accent-foreground: 0.99 0.005 180;
+        
+        --destructive: 0.55 0.20 25;
+        --destructive-foreground: 0.99 0.005 180;
+        
+        --border: 0.92 0.008 180;
+        --input: 0.92 0.008 180;
+        --ring: 0.55 0.12 190;
+        
+        --chart-1: 0.60 0.14 190;
+        --chart-2: 0.65 0.12 140;
+        --chart-3: 0.70 0.14 35;
+        --chart-4: 0.55 0.10 220;
+        --chart-5: 0.75 0.12 60;
+    }
+
+    .dark {
+        /* Dark mode - Deep, rich, premium */
+        --background: 0.18 0.015 220;
+        --foreground: 0.96 0.008 180;
+        
+        --card: 0.22 0.018 220;
+        --card-foreground: 0.96 0.008 180;
+        
+        --popover: 0.20 0.018 220;
+        --popover-foreground: 0.96 0.008 180;
+        
+        /* Primary: Brighter teal for dark mode */
+        --primary: 0.68 0.14 190;
+        --primary-foreground: 0.18 0.015 220;
+        
+        /* Secondary: Muted sage */
+        --secondary: 0.28 0.020 140;
+        --secondary-foreground: 0.96 0.008 180;
+        
+        --muted: 0.26 0.018 220;
+        --muted-foreground: 0.62 0.012 200;
+        
+        /* Accent: Warm highlight */
+        --accent: 0.65 0.16 35;
+        --accent-foreground: 0.96 0.008 180;
+        
+        --destructive: 0.52 0.22 20;
+        --destructive-foreground: 0.96 0.008 180;
+        
+        --border: 0.30 0.018 220;
+        --input: 0.30 0.018 220;
+        --ring: 0.68 0.14 190;
+        
+        --chart-1: 0.65 0.16 190;
+        --chart-2: 0.60 0.14 140;
+        --chart-3: 0.65 0.16 35;
+        --chart-4: 0.60 0.12 220;
+        --chart-5: 0.70 0.14 60;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground antialiased;
+        font-family: 'Inter var', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+        font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+        letter-spacing: -0.011em;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-semibold tracking-tight;
+        letter-spacing: -0.022em;
+    }
+    
+    h1 {
+        @apply text-4xl md:text-5xl;
+        line-height: 1.1;
+    }
+    
+    h2 {
+        @apply text-3xl md:text-4xl;
+        line-height: 1.2;
+    }
+    
+    h3 {
+        @apply text-2xl md:text-3xl;
+        line-height: 1.25;
+    }
+    
+    /* Premium focus states */
+    :focus-visible {
+        @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+    }
+    
+    /* Smooth transitions */
+    button, a, [role="button"] {
+        @apply transition-all duration-200;
+    }
+}
+
+/* Premium card shadows */
+@layer utilities {
+    .shadow-premium {
+        box-shadow: 
+            0 1px 2px 0 oklch(0 0 0 / 0.03),
+            0 2px 8px -2px oklch(0 0 0 / 0.05),
+            0 8px 24px -4px oklch(0 0 0 / 0.08);
+    }
+    
+    .shadow-premium-lg {
+        box-shadow: 
+            0 2px 4px 0 oklch(0 0 0 / 0.04),
+            0 4px 16px -2px oklch(0 0 0 / 0.08),
+            0 16px 48px -8px oklch(0 0 0 / 0.12);
+    }
+    
+    .dark .shadow-premium {
+        box-shadow: 
+            0 1px 2px 0 oklch(0 0 0 / 0.2),
+            0 2px 8px -2px oklch(0 0 0 / 0.3),
+            0 8px 24px -4px oklch(0 0 0 / 0.4);
+    }
+    
+    .dark .shadow-premium-lg {
+        box-shadow: 
+            0 2px 4px 0 oklch(0 0 0 / 0.3),
+            0 4px 16px -2px oklch(0 0 0 / 0.4),
+            0 16px 48px -8px oklch(0 0 0 / 0.5);
+    }
+}
